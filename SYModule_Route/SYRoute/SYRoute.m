@@ -26,9 +26,10 @@ _Pragma("clang diagnostic pop") \
 
 @implementation SYRoute
 
+static SYRoute *shareInstance = nil;
+
 //TODO:
 + (instancetype)shareInstance {
-    static SYRoute *shareInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if(shareInstance == nil){
@@ -37,6 +38,14 @@ _Pragma("clang diagnostic pop") \
             NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"RouterData" ofType:@"plist"];
             shareInstance.plistdata = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
         }
+    });
+    return shareInstance;
+}
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shareInstance = [super allocWithZone:zone];
     });
     return shareInstance;
 }
