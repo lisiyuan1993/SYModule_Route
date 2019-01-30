@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34BB1F352201EFBD002CC5D1 /* SYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34BB1F342201EFBD002CC5D1 /* SYBaseViewController.m */; };
 		87435FA2216DDE1A00DBD7D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87435FA1216DDE1A00DBD7D7 /* AppDelegate.m */; };
 		87435FA5216DDE1A00DBD7D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87435FA4216DDE1A00DBD7D7 /* ViewController.m */; };
 		87435FA8216DDE1A00DBD7D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87435FA6216DDE1A00DBD7D7 /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34BB1F332201EFBD002CC5D1 /* SYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYBaseViewController.h; sourceTree = "<group>"; };
+		34BB1F342201EFBD002CC5D1 /* SYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBaseViewController.m; sourceTree = "<group>"; };
 		87435F9D216DDE1900DBD7D7 /* SYModule_Route.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYModule_Route.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87435FA0216DDE1A00DBD7D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		87435FA1216DDE1A00DBD7D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				87435FA4216DDE1A00DBD7D7 /* ViewController.m */,
 				87435FB6216DE0A100DBD7D7 /* ViewController1.h */,
 				87435FB7216DE0A100DBD7D7 /* ViewController1.m */,
+				34BB1F332201EFBD002CC5D1 /* SYBaseViewController.h */,
+				34BB1F342201EFBD002CC5D1 /* SYBaseViewController.m */,
 				87435FA6216DDE1A00DBD7D7 /* Main.storyboard */,
 				87435FA9216DDE3400DBD7D7 /* Assets.xcassets */,
 				87435FAB216DDE3400DBD7D7 /* LaunchScreen.storyboard */,
@@ -168,6 +173,7 @@
 				87435FBE216DE2CA00DBD7D7 /* SYRoute.m in Sources */,
 				87435FB0216DDE3400DBD7D7 /* main.m in Sources */,
 				87435FA2216DDE1A00DBD7D7 /* AppDelegate.m in Sources */,
+				34BB1F352201EFBD002CC5D1 /* SYBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

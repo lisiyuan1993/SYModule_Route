@@ -6,8 +6,7 @@
 //  Copyright © 2018年 nuckyLee. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface ViewController1 : UIViewController
+#import "SYBaseViewController.h"
+@interface ViewController1 : SYBaseViewController
 
 @end

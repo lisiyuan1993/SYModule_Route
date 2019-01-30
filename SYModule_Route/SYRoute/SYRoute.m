@@ -62,6 +62,7 @@ _Pragma("clang diagnostic pop") \
 {
     NSString *viewControllerName = [self.plistdata objectForKey:stringVCName];
     Class class = NSClassFromString(viewControllerName);
+    //此处做符合业务需求的初始化，比如storyboard初始化方法
     UIViewController *controller = [[class alloc] init];
     return controller;
 }

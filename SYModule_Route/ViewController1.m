@@ -18,14 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"%@",self.paramsDictOfController);
     UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, 100, 100)];
+    if (self.paramsDictOfController) {
+        self.titletext = [self.paramsDictOfController objectForKey:@"title"];
+    }
     lable.text = self.titletext;
     [self.view addSubview:lable];
 }
 
--(void)initViewControllerParam:(NSDictionary *)dic {
-    self.titletext = [dic objectForKey:@"title"];
-}
+/* 可以单独在每个ViewController中写此方法，也可以写在基类中
+ -(void)initViewControllerParam:(NSDictionary *)dic {
+ self.titletext = [dic objectForKey:@"title"];
+ }
+ */
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
