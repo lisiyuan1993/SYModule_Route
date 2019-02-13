@@ -15,6 +15,10 @@
 
 @implementation ViewController1
 
++ (ViewController1 *)controller {
+    return [[ViewController1 alloc] init];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

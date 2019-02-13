@@ -7,6 +7,7 @@
 //
 
 #import "SYRoute.h"
+#import <objc/runtime.h>
 
 //ignore selector unknown warning
 #define SuppressPerformSelectorLeakWarning(Stuff) \
@@ -30,6 +31,7 @@ static SYRoute *shareInstance = nil;
 
 //TODO:
 + (instancetype)shareInstance {
+    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         if(shareInstance == nil){
@@ -67,11 +69,18 @@ static SYRoute *shareInstance = nil;
     }
 }
 
--(UIViewController *)getViewController:(NSString *)stringVCName
+- (UIViewController *)getViewController:(NSString *)stringVCName
 {
     NSString *viewControllerName = [self.plistdata objectForKey:stringVCName];
     Class class = NSClassFromString(viewControllerName);
-    //此处做符合业务需求的初始化，比如storyboard初始化方法
+#warning --- 此处做符合业务需求的初始化，比如自定义controller初始化方法(通常UIStoryboard创建的controller实例)
+    SEL getSel = NSSelectorFromString(@"controller");
+    if ([class respondsToSelector:getSel]) {
+        IMP imp = [class methodForSelector:getSel];
+        id (*func)(id, SEL) = (void *)imp;
+        id object = func(class, getSel);
+        return (UIViewController *)object;
+    }
     UIViewController *controller = [[class alloc] init];
     return controller;
 }

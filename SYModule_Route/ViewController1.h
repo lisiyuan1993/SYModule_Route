@@ -9,4 +9,6 @@
 #import "SYBaseViewController.h"
 @interface ViewController1 : SYBaseViewController
 
++ (ViewController1 *)controller;
+
 @end
