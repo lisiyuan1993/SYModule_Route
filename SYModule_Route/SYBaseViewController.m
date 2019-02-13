@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
 }
 
--(void)initViewControllerParam:(NSDictionary *)dic {
+- (void)initViewControllerParam:(NSDictionary *)dic {
     self.paramsDictOfController = dic;
 }
 

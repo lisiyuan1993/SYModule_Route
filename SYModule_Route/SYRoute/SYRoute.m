@@ -59,7 +59,7 @@ static SYRoute *shareInstance = nil;
     UIViewController *controller = [self getViewController:linkUrl];
     if(controller != nil){
         controller = [self controller:controller withParam:dict andVCname:linkUrl];
-        //此处做符合业务需求的路由跳转
+#warning --- 此处做符合业务需求的路由跳转
         UINavigationController *nav = [self getRootController];
         UIViewController *vc = nav.viewControllers.lastObject;
         [vc.navigationController pushViewController:controller animated:YES];
@@ -76,10 +76,13 @@ static SYRoute *shareInstance = nil;
 #warning --- 此处做符合业务需求的初始化，比如自定义controller初始化方法(通常UIStoryboard创建的controller实例)
     SEL getSel = NSSelectorFromString(@"controller");
     if ([class respondsToSelector:getSel]) {
-        IMP imp = [class methodForSelector:getSel];
-        id (*func)(id, SEL) = (void *)imp;
-        id object = func(class, getSel);
-        return (UIViewController *)object;
+//        IMP imp = [class methodForSelector:getSel];
+//        id (*func)(id, SEL) = (void *)imp;
+//        id object = func(class, getSel);
+//        return (UIViewController *)object;
+        SuppressPerformSelectorLeakWarning(id object = [class performSelector:getSel];
+                                           return (UIViewController *)object;);
+        
     }
     UIViewController *controller = [[class alloc] init];
     return controller;
